@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
+    <style>
+        body{
+            background-color: #5b7396;
+            margin: 10%;
+            background: url(./images/home-img.svg);
+        }
+        .box{
+            display: flex;
+        }
+      .procon{
+        height: 500px;
+        width: 350px;
+        background-color: aquamarine;
+        margin-top: 40px;
+        padding: 10px;
+        border-radius: 12px;
+        
+    }
+        .top{
+            display: flex;
+        }
+       .card{
+          background-color: darksalmon;
+          padding: 20px;
+
+       }
+        .top-banner{
+            display: flex;
+            padding-left: 80px;
+            background-color: burlywood;
+            margin-left: 200px;
+        }
+        .top-banner h2 {
+           padding-right : 50px;
+        }
+
+        .con{
+            margin: 30px;
+            height: 500px;
+            background-color: darkkhaki;
+            padding: 15px;
+            width: 700px;
+        }
+
+ .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+.user-details .input-box input{
+     height: 45px;
+     width: 50%;
+     outline: none;
+     border-radius: 5px;
+    border: 1px solid #5b7396;  
+     padding-left: 15px;
+     font-size: 18px;
+     border-bottom-width: 2px; 
+     transition: all 0.3s ease-in-out;
+}
+.user-details .input-box .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.types{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+/* .types label:hover{
+    background-color: #1e91de;
+    padding: 5px 20px;
+    border-radius: 2px;
+} */
+form .button{
+    height:45px;
+    margin: 30px 0;
+}
+form .button button{
+    margin-left: 100px;
+     height: 100%;
+     width: 30%;
+     outline: none;
+     font-weight: 500;
+     outline: none;
+     font-size: 20px;
+     letter-spacing: 1px;
+     border-radius: 8px;
+     background: #34d77b;
+     border-color: #34d77b;
+}
+.login h3 a{
+          text-decoration: none;
+          color:  #1e91de;
+}
+.login h3{
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div class="card">
+            <h4><i class="fa-solid fa-user"></i>Gautam KK</h4>
+            <h5>gautam@45</h5>
+        </div>
+        <div class="top-banner">
+            <h2><i class="fa-sharp fa-solid fa-credit-card-front"></i>payment methods</h2>
+            <h2><i class="fa-sharp fa-solid fa-truck-fast"></i> orders</h2>
+            <h2><img src="./images/badge.png">my rewards</h2>
+        </div>
+    </div>
+    <div class="box">
+        <div class="procon">
+            <h1><a href="#"><i class="fa-solid fa-circle-info"></i>ACC info></a></h1>
+            <h1><a href="#"><i class="fa-solid fa-heart"></i>My Wishlist></a></h1>
+            <h1><a href="#"><i class="fa-solid fa-badge-percent"></i>Offers></a></h1>
+            <h1><a href="#"><i class="fa-solid fa-file-prescription"></i>My Presciption></a></h1>
+            <h1><a href="#"><i class="fa-sharp fa-solid fa-circle-question"></i>Help?></a></h1>
+            <h1><a href="#"><i class="fa-solid fa-message-medical"></i>Rate us></a></h1>
+            <h1><a href="#"><i class="fa-solid fa-right-from-bracket"></i>Logout></a></h1>
+        </div>
+        <div class="con">
+            <form  id="form" onsubmit="return checkinputs()" action="../medcare/product.html">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Full Name</span>
+                        <input type="text" placeholder="Enter your name" id="username" value="gautam" >
+                         <small id="uname-error"></small>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Email</span>
+                        <input type="email" placeholder="Enter your email id" id="email">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Phone number</span>
+                        <input type="tel" maxlength="10" placeholder="Enter your number" id="number">
+                        <small id="num-error"></small>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Dateof birth</span>
+                        <input type="date" placeholder="Enter your DOB" >
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Password</span>
+                        <input type="password" placeholder="Enter your password"  id="pass1" onkeyup="checking()">
+                        <small id="pass1-error"></small>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Confirm Password</span>
+                        <input type="password" placeholder="Retype your password"  id="pass2" onkeyup="checkpass()">
+                        <small id="pass2-error"></small>
+                    </div>
+                </div>
+                    <div class="input-box">
+                        <span class="gender-type">Gender</span>
+                        <div class="types">
+                        <input type="radio" id="male" name="gender" value="Male">
+                        <label for="male">Male</label><br>
+                        <input type="radio" id="female" name="gender" value="Female">
+                        <label for="female">Female</label><br>
+                        <input type="radio" id="others" name="gender" value="others">
+                        <label for="others">Others</label>
+                    </div>
+                    </div>
+                    <div class="button">
+                        <button type="submit">Register</button>
+                    </div>
+                    <div class="login">
+                       <h3>Already have an account <span><a href="login.html">LOGIN</a></span></h3>
+                    </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

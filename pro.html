@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        
+body{
+  background-color: #d7c8c8;
+  overflow-x: hidden;
+  padding-left: 35rem;
+}
+
+header{
+ position:fixed;
+ top:0; left:0;
+ Z-index:1000;
+ height:100%;
+ width:35rem;
+ background: #1a1a1a;
+ display:flex;
+ align-items:center;
+ justify-content: center;
+ flex-flow:column;
+ text-align:center;
+}
+
+section{
+  min-height: 100vh;
+  padding:1rem;
+}
+header .user img{
+  height:17rem;
+  width:17rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: .7rem solid yellow;
+}
+
+header .user .name{
+  font-size: 3.5rem;
+  color: #fff;
+}
+
+header .user .post{
+  font-size: 2rem;
+  color: #eee;
+}
+
+header .profile_sidebar{
+  width:100%
+}
+
+header .profile_sidebar ul{
+  list-style: none;
+  padding:1rem;
+}
+
+header .profile_sidebar ul li a{
+  display:block;
+  padding: 10px;
+  margin: 1.5rem 0;
+  background: #333;
+  color:#fff;
+  font-size: 25px;
+  border-radius: 5rem;
+}
+
+header .profile_sidebar ul li a:hover{
+  background: yellow;
+}
+
+#menu{
+  position:fixed;
+  top:2rem; right:2rem;
+  background: #333;
+  color: #fff;
+  cursor:pointer;
+  font-size: 2.5rem;
+  padding:1rem 1.5rem;
+  z-index: 1000;
+  display:none;
+}
+
+.dashboard{
+  display:flex;
+  justify-content: center;
+  flex-flow: column;
+  padding: 0 15rem;
+}
+
+.dashboard h3{
+  font-size: 2.5rem;
+  color:#fff
+}
+
+.dashboard h1{
+  font-size: 5rem;
+  color:#fff
+}
+
+.dashboard p{
+   font-size: 2rem;
+   color:#fff;
+   padding:1rem 0;
+}
+
+.form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.form-container input {
+  padding: 10px;
+  margin: 5px;
+}
+/* ********media qureies************** */
+
+@media (max-width:1200px){
+  html{
+    font-size: 55% ;
+  }
+}
+
+@media (max-width:991px){
+  header{
+    left:-120px;
+  }
+
+  #menu{
+    display: block;
+  }
+}
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+            <header>
+        
+               <div class="user">
+                    <img src="../../assets/images/home-img.svg" alt="">
+                    <h3 class="name"> Gautam</h3>
+                    <p class="post">Dev</p>
+               </div>
+        
+               <nav class="profile_sidebar">
+                <ul>
+                 <li><a href="#dashboard">Dashboard</a></li>
+                 <li><a href="#profile">Profile</a></li>
+                 <li><a href="#orders">Orders</a></li>
+                 <li><a href="#address">Address</a></li>
+                 <li><a href="#logout">Logout  All devices</a></li>
+                </ul>
+               </nav>
+        </header>
+        
+        <div id="menu" class="fas fa-bars"></div>
+        
+        <section class="dashboard" id="dashboard">
+           <h3>Hi There !</h3>
+           <h1>I'm <span>Gautam</span></h1>
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe reprehenderit at cumque facere sequi dolor neque officia laborum cum perspiciatis corrupti autem quo excepturi ut, quidem tempore asperiores fugiat animi?</p>
+            <a href="#about"><button class="btn">About me</button></a>
+        </section>
+        
+        <section class="profile" id="profile">
+          <form action="#">
+            <div class="form-container">
+                <div class="form-fields">
+                    <label>First name:</label>
+                    <input type="text" name="ltn__name" />
+                </div>
+                <div class="form-fields">
+                    <label>Last name:</label>
+                    <input type="text" name="ltn__lastname" />
+                </div>
+                <div class="form-fields">
+                    <label>Display Name:</label>
+                    <input type="text" name="ltn__lastname" placeholder="Ethan" />
+                </div>
+                <div class="form-fields">
+                    <label>Display Email:</label>
+                    <input type="email" name="ltn__lastname" placeholder="example@example.com" />
+                </div>
+            </div>
+            <fieldset>
+                <legend>Password change</legend>
+                <div class="pass-container">
+                    <div class="pass-fields">
+                        <label>Current password (leave blank to leave
+                            unchanged):</label>
+                        <input type="password" name="ltn__name" />
+                        <label>New password (leave blank to leave unchanged):</label>
+                        <input type="password" name="ltn__lastname" />
+                        <label>Confirm new password:</label>
+                        <input type="password" name="ltn__lastname" />
+                    </div>
+                </div>
+            </fieldset>
+            <div class="button">
+                <button type="submit" class="btn theme-btn-1 btn-effect-1 text-uppercase">
+                    Save Changes
+                </button>
+            </div>
+        </form>
+        </section>
+
+        
+</body>
+</html>

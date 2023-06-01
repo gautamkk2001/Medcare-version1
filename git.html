@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     .container{
+  max-width: 1440px;
+  min-height: 100vh;
+  margin:auto;
+  display:flex;
+  flex-direction: column;
+}
+
+.heading{
+  font-size: 18px;
+  font-weight: 400;
+  color: grey;
+  border-bottom: 1px solid blue;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap:20px;
+}
+
+.item-flex{
+  display:flex;
+  flex-grow: 1;
+}
+
+.checkout{
+  width:70%;
+  padding: 40px;
+  background: wheat;
+  border-right: 1px solid green;
+}
+
+.section-heading{
+  color: grey;
+  margin-bottom: 30px;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.payment-form{
+  margin-bottom: 40px;
+}
+
+.payment-method{
+  display:flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.payment-method .method{
+  border: 1px solid silver;
+  border-bottom: 10%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.payment-method .selected {
+  border-color: azure;
+}
+
+.payment-method .method .checkmark{
+ margin-left: auto;
+ color:  silver;
+}
+
+.payment-method .method .fill{
+ color: azure;
+}
+
+.label-default{
+    padding-left: 10px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: gray;
+}
+
+.input-default{
+    background: dark gray;
+    border-radius: 10px;
+    color: gray;
+}
+
+.payment-form input{
+    padding: 10px 15px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.card-name, .card-number{
+    margin-bottom: 20px;
+}
+.card-name input, .cvv input{
+    letter-spacing: 3px;
+}
+.input.flex{
+    display:flex;
+    align-items: center;
+    gap: 30px;
+}
+.input.flex .expire-date, .input-flex .cvv{
+ width:50%;
+}
+.expire-date .input-flex{
+    /* color: */
+    gap:13px;
+}
+.expire-date .input-flex input{
+ text-align: center;
+}
+.btn-primary{
+    background: azure;
+    font-weight: 500;
+    color:white;
+    padding: 13px 45px;
+}
+.cart{
+    width:40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.cart-item-box{
+    padding: 40px;
+    margin-bottom: auto;
+}
+.product-card .card{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.card .detail .wrapper{
+    display: flex;
+    gap: 20px;
+}
+.product-qty{
+    display:flex;
+    align-items: center;
+    gap:10px;
+}
+       .pharmacy{
+        width:80vw;
+        height:50vh;
+        margin-left: 80px;
+       outline:  3px solid black;
+      }
+      .pharmacy h2{
+        font-size: 20px;
+        color:brown;
+      }
+      .container-pharmacy{
+        display: flex;
+        justify-items: center;
+        align-items: center;
+      }
+     .img img{
+        width: 35vw;
+        height:40vh;
+     } 
+    </style>
+</head>
+<body>
+     <div class="pharmacy">
+            <h2>PHARMACY MANAGEMENT SYSTEM - Gautam</h2>
+        <div class="container-pharmacy">
+             <div class="img">
+                <img src="./images/image.jpeg">
+             </div>
+             <div class="info-pharmacy">
+                <h4>Advantages</h4>
+                <ul>
+                    <li>no more standing in long queues</li>
+                    <li>Super-fast deliveries</li>
+                    <li>100% Genuine Medicine</li>
+                    <li>wide range of products</li>
+                </ul>
+                <p>Ordering medicines online need not be complicated. And at Medcare Pharmacy we ensure that. All you need to do is: Browse 
+                    through our wide variety of products Add products to your cart and complete the payment. wow! Your order will be on its way to 
+                    you. Medcare Pharmacy is your go-to online pharmacy store for all your medicine needs. We also have a range of products in
+                     the personal care, baby care, health and nutrition, wellness, and lifestyle categories. Come explore everything related to
+                      healthcare at Medcare Pharmacy.</p>
+             </div>
+        </div>
+    </div> 
+
+    <section class="container">
+        <h1 class="heading">Shopping Cart</h1>
+      
+        <div class="item-flex">
+      
+          <section class="checkout">
+            <h2 class="section-heading">Payment Details</h2>
+      
+            <div class="payment-form">
+              <div class="payment-method">
+                <button class="method-selected"><span>Credit card</span></button>
+                <button class="method-selected"><span>UPI</span></button>
+      
+              </div>
+      
+              <form>
+                <div class="card-name">
+                  <label for="card-name" class="label-default">Cardholder's Name</label>
+                  <input type="text" name="card-name" id="card-name" classs="input-default">
+                </div>
+      
+                <div class="card-number">
+                  <label for="card-number" class="label-default">Card Number</label>
+                  <input type="text" name="card-number" id="card-number" classs="input-default">
+                </div>
+      
+                <div class="input-flex">
+      
+                  <div class="expire-date">
+      
+                    <label for="expire-date" class="label-default">Expiration date</label>
+      
+                    <div class="input-flex">
+                      <input= type="number" name="day" id="expire-date" placeholder="31" min="1" max="31"
+                        class="input-default">
+                        <input= type="number" name="month" id="expire-date" placeholder="31" min="1" max="12"
+                          class="input-default">
+                    </div>
+                  </div>
+      
+                  <div class="cvv">
+                    <label for="cvv" class="label-default">CVV</label>
+                    <input type="text" name="cvv" id="cvv" classs="input-default">
+                  </div>
+      
+                </div>
+              </form>
+            </div>
+      
+            <button class="button-primary"><b>Pay</b> <span id="payamount">438</span> </button>
+          </section>
+      
+          <section class="cart">
+      
+            <div class="cart-item-box">
+               <h2 class="section-heading"> Order Summary</h2>
+                <div class="produt-card">
+                    <div class="card">
+                       <div class="img-box">
+                          <img src="../../assets/images/banner-imgs10.jpg" class="product-img" width="80px">
+                       </div>
+      
+                       <div class="detail">
+                          <h4 class="product-name">Green</h4>
+                          <div class="wrapper">
+      
+                              <div class="product-qty">
+                                <button id="decrement">-</button>
+                                <span id="quantity">1</span>
+                                <button id="increment">+</button>
+                              </div>
+      
+                              <div class="price">
+                                Rs <span id="price">546</span>
+                              </div>
+                          </div>
+                       </div>
+      
+                       <button id="product-close-btn">close</button>
+                    </div>
+                </div>
+      
+      
+            </div>
+      
+          <div class="wrapper">
+             <div class="discount-coupon">
+               <label for="discount-coupon" class="label-default">Gift Card</label>
+               <div class="wrapper-flex">
+                 <input type="text" name="discount-coupon" id="discount-coupon" class="input-default">
+                 <button class="btn btn-outline">Apply</button>
+               </div>
+             </div>
+      
+             <div class="amount">
+              <div class="subtotal">
+                 <span>Subtotal</span> <span>RS:<span id="subtotal">852</span></span>
+              </div>
+      
+              <div class="tax">
+                <span>Tax</span> <span>RS:<span id="tax">852</span></span>
+             </div>
+      
+             <div class="total">
+              <span>Total</span> <span>RS:<span id="total">852</span></span>
+           </div>
+      
+             </div>
+      
+          </div>
+          </section>
+      
+        </div>
+      </section>
+      
+      
+</body>
+</html>
