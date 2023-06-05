@@ -4,210 +4,194 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        
-body{
-  background-color: #d7c8c8;
-  overflow-x: hidden;
-  padding-left: 35rem;
-}
-
-header{
- position:fixed;
- top:0; left:0;
- Z-index:1000;
- height:100%;
- width:35rem;
- background: #1a1a1a;
- display:flex;
- align-items:center;
- justify-content: center;
- flex-flow:column;
- text-align:center;
-}
-
-section{
-  min-height: 100vh;
-  padding:1rem;
-}
-header .user img{
-  height:17rem;
-  width:17rem;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1rem;
-  border: .7rem solid yellow;
-}
-
-header .user .name{
-  font-size: 3.5rem;
-  color: #fff;
-}
-
-header .user .post{
-  font-size: 2rem;
-  color: #eee;
-}
-
-header .profile_sidebar{
-  width:100%
-}
-
-header .profile_sidebar ul{
-  list-style: none;
-  padding:1rem;
-}
-
-header .profile_sidebar ul li a{
-  display:block;
-  padding: 10px;
-  margin: 1.5rem 0;
-  background: #333;
-  color:#fff;
-  font-size: 25px;
-  border-radius: 5rem;
-}
-
-header .profile_sidebar ul li a:hover{
-  background: yellow;
-}
-
-#menu{
-  position:fixed;
-  top:2rem; right:2rem;
-  background: #333;
-  color: #fff;
-  cursor:pointer;
-  font-size: 2.5rem;
-  padding:1rem 1.5rem;
-  z-index: 1000;
-  display:none;
-}
-
-.dashboard{
-  display:flex;
-  justify-content: center;
-  flex-flow: column;
-  padding: 0 15rem;
-}
-
-.dashboard h3{
-  font-size: 2.5rem;
-  color:#fff
-}
-
-.dashboard h1{
-  font-size: 5rem;
-  color:#fff
-}
-
-.dashboard p{
-   font-size: 2rem;
-   color:#fff;
-   padding:1rem 0;
-}
-
-.form-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.form-container input {
-  padding: 10px;
-  margin: 5px;
-}
-/* ********media qureies************** */
-
-@media (max-width:1200px){
-  html{
-    font-size: 55% ;
-  }
-}
-
-@media (max-width:991px){
-  header{
-    left:-120px;
-  }
-
-  #menu{
-    display: block;
-  }
-}
-
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css" />
+    <link rel="Stylesheet" type="text/css" href="./CSS/prostyle.css">
     <title>Document</title>
 </head>
 <body>
             <header>
-        
                <div class="user">
-                    <img src="../../assets/images/home-img.svg" alt="">
+                    <img src="./images/pharmacy-s.jpg" alt="">
                     <h3 class="name"> Gautam</h3>
-                    <p class="post">Dev</p>
+                    <p class="post">User</p>
                </div>
         
                <nav class="profile_sidebar">
                 <ul>
-                 <li><a href="#dashboard">Dashboard</a></li>
                  <li><a href="#profile">Profile</a></li>
                  <li><a href="#orders">Orders</a></li>
                  <li><a href="#address">Address</a></li>
-                 <li><a href="#logout">Logout  All devices</a></li>
+                 <li><a href="homepage.html">Logout  All devices</a></li>
                 </ul>
                </nav>
         </header>
         
         <div id="menu" class="fas fa-bars"></div>
         
-        <section class="dashboard" id="dashboard">
-           <h3>Hi There !</h3>
-           <h1>I'm <span>Gautam</span></h1>
-           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe reprehenderit at cumque facere sequi dolor neque officia laborum cum perspiciatis corrupti autem quo excepturi ut, quidem tempore asperiores fugiat animi?</p>
-            <a href="#about"><button class="btn">About me</button></a>
-        </section>
-        
-        <section class="profile" id="profile">
-          <form action="#">
-            <div class="form-container">
-                <div class="form-fields">
-                    <label>First name:</label>
-                    <input type="text" name="ltn__name" />
-                </div>
-                <div class="form-fields">
-                    <label>Last name:</label>
-                    <input type="text" name="ltn__lastname" />
-                </div>
-                <div class="form-fields">
-                    <label>Display Name:</label>
-                    <input type="text" name="ltn__lastname" placeholder="Ethan" />
-                </div>
-                <div class="form-fields">
-                    <label>Display Email:</label>
-                    <input type="email" name="ltn__lastname" placeholder="example@example.com" />
-                </div>
+     <!-- info -->
+     <section>
+      <div class="info-container">
+        <div class="title"> Update </div>
+        <form id="info-form">
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Full Name</span>
+              <input type="text" name="username" pattern="^[A-Z a-z]{3,15}$" placeholder="FirstName" value="Gautam" class="input"
+                formControlName="fullname1" />
             </div>
-            <fieldset>
-                <legend>Password change</legend>
-                <div class="pass-container">
-                    <div class="pass-fields">
-                        <label>Current password (leave blank to leave
-                            unchanged):</label>
-                        <input type="password" name="ltn__name" />
-                        <label>New password (leave blank to leave unchanged):</label>
-                        <input type="password" name="ltn__lastname" />
-                        <label>Confirm new password:</label>
-                        <input type="password" name="ltn__lastname" />
-                    </div>
-                </div>
-            </fieldset>
-            <div class="button">
-                <button type="submit" class="btn theme-btn-1 btn-effect-1 text-uppercase">
-                    Save Changes
-                </button>
+    
+    
+    
+            <div class="input-box">
+              <span class="details">Email</span>
+              <input type="text" name="emailid" pattern="^[a-z 0-9]+[@][a-z]+[\.]+[a-z]{2,3}$"  value="gautamkrishnasamy2001@gmail.com"
+                class="input" formControlName="email1" />
             </div>
+    
+    
+            <div class="input-box">
+              <span class="details">Phone number</span>
+              <input type="tel" name="mobileno" pattern="^[ 6-9]{1}[0-9]{9}$" placeholder="Mobileno"
+                class="input" formControlName="mobile1" />
+            </div>
+    
+            <div class="input-box">
+              <span class="details">Dateof birth</span>
+              <input type="date" placeholder="Enter your DOB"  formControlName="date" >
+            </div>
+            <div class="input-box">
+              <span class="details">New Password</span>
+              <input type="password" placeholder="Enter your password" id="pass1" name="pass"
+                pattern="^[A-Z]{1}[a-z]+[@][1-9]{1,7}$" name="Password" class="input" required
+                formControlName="password1" />
+            </div>
+    
+    
+            <div class="input-box">
+              <span class="details">Confirm Password</span>
+              <input type="password" placeholder="Retype your password" id="pass2" pattern="^[A-Z]{1}[a-z]+[@][1-9]{3,7}$"
+                name="Password" class="input" required cpasswords formControlName="cpassword1">
+            </div>
+    
+    
+            <div class="gender-box">
+              <span class="gender-type">Gender</span>
+              <div class="types">
+                <div class="gen">
+                <input type="radio" id="male" name="gender" value="Male"  formControlName="gender">
+                <label for="male">Male</label><br>
+              </div>
+                <div class="gen">
+                <input type="radio" id="female" name="gender" value="Female"  formControlName="gender" >
+                <label for="female">Female</label><br>
+              </div>
+                <div class="gen">
+                <input type="radio" id="others" name="gender" value="others"  formControlName="gender" >
+                <label for="others">Others</label>
+              </div>
+              </div>
+            </div>
+    
+    
+          </div>
+          <div class="button">
+            <button>Modify</button>
+          </div>
         </form>
-        </section>
+      </div>
+    </section>
 
-        
+        <!-- Orders -->
+         <section id="orders">
+          <div class="cen">
+            <h1>No Orders yet</h1>
+          </div>
+         </section>
+        <!-- address -->
+        <section id="address">
+          <div class="saved">
+            <div class="saved-address">
+              <h3>Gautam</h3><small>Home</small>
+              <h4>9865451374</h4>
+              <p>90/94,Muthaiyan valasu, Tholusalan kattu thottam, Sivagiri Erode District, TamilNadu-638109</p>
+            </div>
+          
+            <div class="saved-address">
+              <h3>Abishek</h3><small>Office</small>
+              <h4>9080555646</h4>
+              <p>10/84, Perumampalyam, Vellotamparappu(po),  Erode District, TamilNadu-638154</p>
+            </div>
+          </div>
+          <div class="container">
+            <div class="title"> Add address </div>
+            <form id="form">
+              <div class="user-details">
+                <div class="input-box">
+                  <span class="details">Full Name</span>
+                  <input type="text" name="username" pattern="^[A-Z a-z]{3,15}$" placeholder="FirstName" value="Gautam" class="input"
+                    formControlName="fullname1" />
+                </div>
+          
+          
+          
+                <div class="input-box">
+                  <span class="details">Phone Number</span>
+                  <input type="text" name="emailid" pattern="^[a-z 0-9]+[@][a-z]+[\.]+[a-z]{2,3}$"  value="gautamkrishnasamy2001@gmail.com"
+                    class="input" formControlName="email1" />
+                </div>
+          
+          
+                <div class="input-box">
+                  <span class="details">Address</span>
+                  <input type="textbox" name="mobileno" pattern="^[ 6-9]{1}[0-9]{9}$" placeholder="Roadname , Area, Colony"
+                    class="input" formControlName="mobile1" />
+                </div>
+          
+                <div class="input-box">
+                  <span class="details">District</span>
+                  <input type="text" placeholder=" Ex:Chennai"  formControlName="date" >
+                </div>
+                <div class="input-box">
+                  <span class="details">State</span>
+                  <input type="password" placeholder="TN" id="pass1" name="pass"
+                    pattern="^[A-Z]{1}[a-z]+[@][1-9]{1,7}$" name="Password" class="input" required
+                    formControlName="password1" />
+                </div>
+          
+          
+                <div class="input-box">
+                  <span class="details">Pincode</span>
+                  <input type="text" placeholder="postal Index Number" id="pass2" pattern="^[A-Z]{1}[a-z]+[@][1-9]{3,7}$"
+                    name="Password" class="input" required cpasswords formControlName="cpassword1">
+                </div>
+          
+          
+                <div class="gender-box">
+                  <span class="gender-type">Address type</span>
+                  <div class="types">
+                    <div class="gen">
+                    <input type="radio" id="male" name="gender" value="Male"  formControlName="gender">
+                    <label for="male">Home</label><br>
+                  </div>
+                    <div class="gen">
+                    <input type="radio" id="female" name="gender" value="Female"  formControlName="gender" >
+                    <label for="female">Office</label><br>
+                  </div>
+                    <div class="gen">
+                    <input type="radio" id="others" name="gender" value="others"  formControlName="gender" >
+                    <label for="others">Others</label>
+                  </div>
+                  </div>
+                </div>
+          
+          
+              </div>
+              <div class="add-button">
+                <button>Add</button>
+              </div>
+            </form>
+          </div>
+          </section>
+
 </body>
 </html>

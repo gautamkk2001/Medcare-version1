@@ -22,6 +22,8 @@ function validated() {
     var pass = document.getElementById("password");
     var user = "gautamkrishnasamy2001@gmail.com";
     var password= "Gautam@123";
+    var admin = "gautamadmin@gmail.com";
+    var admin_password = "Admingautam@123";
 
     if (email.value.trim() == "" || pass.value.trim() == "") {
         alert("No blank values");
@@ -30,6 +32,11 @@ function validated() {
     else if(email.value.trim() == user && pass.value.trim() == password) {
         alert("login success");
         return true;
+    }
+    else if(email.value.trim() == admin && pass.value.trim() == admin_password) {
+        alert("login success");
+        Window.location.href = "admin.html";
+
     }
     else if(email.value.trim() != user && pass.value.trim() == password) {
         alert("enter correct usernmae");
